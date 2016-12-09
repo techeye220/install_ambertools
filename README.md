@@ -1,1 +1,5 @@
-Example: bash install_python.sh
+Example
+
+```bash
+bash install_python.sh
+```
