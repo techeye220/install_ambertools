@@ -1,0 +1,47 @@
+language: cpp
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++
+    - gfortran
+    - clang
+    - libz-dev
+    - libbz2-dev
+    - libblas-dev
+    - liblapack-dev
+    - libarpack2-dev
+    - libnetcdf-dev
+    - openmpi-bin
+    - openmpi-common
+    - libopenmpi-dev
+
+matrix:
+  include:
+    - { os: linux }
+    - { os: osx }
+
+sudo: false
+
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      brew tap homebrew/science;
+      brew update;
+      brew install netcdf fftw gcc;
+    fi
+
+install:
+    - source install_python.sh
+    - conda install -c hainm ambertools --yes
+
+script:
+    - tleap -h
+    - cpptraj -h
+    - python -c "import parmed; print(parmed)"
+    - python -c "import sander; print(sander)"
+    - python -c "import pytraj; print(pytraj)"
+
+notifications:
+  email: false
