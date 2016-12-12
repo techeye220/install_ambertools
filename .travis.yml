@@ -37,10 +37,13 @@ install:
 
 script:
     - tleap -h
+    - sqm -h
+    - sander -h
     - cpptraj -h
     - python -c "import parmed; print(parmed)"
     - python -c "import sander; print(sander)"
     - python -c "import pytraj; print(pytraj)"
+    - python -c "import nglview; print(nglview)"   
 
 notifications:
   email: false
