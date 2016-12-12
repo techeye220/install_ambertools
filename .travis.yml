@@ -38,7 +38,7 @@ install:
 script:
     - tleap -h
     - sqm -h
-    - sander -h
+    # - sander -h # sander -h exit 1, ack
     - cpptraj -h
     - python -c "import parmed; print(parmed)"
     - python -c "import sander; print(sander)"
