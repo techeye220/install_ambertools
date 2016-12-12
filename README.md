@@ -13,4 +13,7 @@ bash install_python.sh
 ```bash
 conda install -c hainm ambertools=16 --yes
 # Note: "hainm" channel will be replaced by something else.
+
+# update: add --force
+conda install -c hainm ambertools --force
 ```
