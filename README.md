@@ -1,4 +1,4 @@
-Example
+# Example
 
 - Install miniconda and some packages
 ```bash
