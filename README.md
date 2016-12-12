@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Amber-MD/setup-scripts.svg?branch=master)](https://travis-ci.org/Amber-MD/setup-scripts)
+
 # Example
 
 - Install miniconda and some packages
