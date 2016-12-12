@@ -13,5 +13,6 @@ bash miniconda.sh -b
 export PATH=$HOME/miniconda2/bin:$PATH
 conda update --all -y
 conda install --yes conda-build jinja2 pip cython numpy pytest
-conda install --yes ipython notebook
+conda install --yes ipython notebook matplotlib
 conda install --yes ipywidgets -c conda-forge
+conda install --yes nglview -c bioconda
