@@ -29,11 +29,7 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       brew tap homebrew/science;
       brew update;
-      gfortran_image=gfortran-6.1-ElCapitan
-      wget http://coudert.name/software/${gfortran_image}.dmg
-      hdutil mount ${gfortran_image}.dmg
-      installer -pkg /Volumes/${gfortran_image}/${gfortran_image}/gfortran.pkg -target /
-      which gfortran
+      bash scripts/install_gfortran.sh;
     fi
 
 install:
