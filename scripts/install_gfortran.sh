@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # osx
+# add linux too?
 gfortran_image=gfortran-6.1-ElCapitan
 wget http://coudert.name/software/${gfortran_image}.dmg
 hdiutil mount ${gfortran_image}.dmg
