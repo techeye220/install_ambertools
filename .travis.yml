@@ -23,13 +23,13 @@ matrix:
     - { os: linux }
     - { os: osx }
 
-sudo: false
+sudo: true
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       brew tap homebrew/science;
       brew update;
-      bash scripts/install_gfortran.sh;
+      sudo bash scripts/install_gfortran.sh;
     fi
 
 install:
