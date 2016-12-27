@@ -21,6 +21,7 @@ addons:
 matrix:
   include:
     - { os: linux }
+    - { os: osx }
 
 sudo: false
 
