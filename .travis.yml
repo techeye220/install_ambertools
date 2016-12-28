@@ -21,14 +21,15 @@ addons:
 matrix:
   include:
     - { os: linux }
+    - { os: osx }
 
-sudo: false
+sudo: true
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       brew tap homebrew/science;
       brew update;
-      brew install netcdf fftw gcc;
+      sudo bash scripts/install_gfortran.sh;
     fi
 
 install:
