@@ -30,6 +30,8 @@ else
 fi
 
 echo "Install Miniconda and AmberTools to $prefix"
+echo ""
+
 bash miniconda.sh -b -p $prefix
 
 export PATH=$prefix/bin:$PATH
@@ -45,4 +47,4 @@ conda install --yes ambertools=$version -c hainm
 
 echo "Make sure to add PATH"
 echo ""
-echo "export PATH=$prefix:$PATH"
+echo "export PATH=$prefix:\$PATH"
