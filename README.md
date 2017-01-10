@@ -1,13 +1,13 @@
 [![Build Status](https://travis-ci.org/Amber-MD/setup-scripts.svg?branch=master)](https://travis-ci.org/Amber-MD/setup-scripts)
 
-Install newest AmberTools binary distribution from a fresh environment
-----------------------------------------------------------------------
+Install Python and AmberTools binary distributions
+--------------------------------------------------
 
 ```bash
-# create /home/amber16 folder and install everything there
+# The script will create /home/amber16 folder and install everything there
 bash install_ambertools.sh --prefix /home/amber16
 
-# create /opt/amber16 folder and install everything there
+# The script will create /opt/amber16 folder and install everything there
 bash install_ambertools.sh --prefix /opt/amber16
 ```
 
