@@ -33,7 +33,7 @@ before_install:
     fi
 
 install:
-    - source install_ambertool.sh
+    - source install_ambertool.sh --prefix $HOME/amber16
 
 script:
     - tleap -h
