@@ -33,8 +33,7 @@ before_install:
     fi
 
 install:
-    - source install_python.sh
-    - conda install -c hainm ambertools --yes
+    - source install_ambertools.sh --prefix $HOME/amber16
 
 script:
     - tleap -h
