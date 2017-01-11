@@ -33,6 +33,7 @@ before_install:
     fi
 
 install:
+    - cp scripts/.amberrc $HOME/
     - source install_ambertools.sh --prefix $HOME/
 
 script:
