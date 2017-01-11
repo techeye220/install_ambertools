@@ -40,6 +40,11 @@ case "$1" in
         ;;
 esac
 
+if [ -d $prefix/$amberfolder ]; then
+    echo "ERROR: $prefix/$amberfolder already exists. Please change your prefix."
+    exit 1
+fi
+
 # should work for both osx and linux
 osname=`python -c 'import sys; print(sys.platform)'`
 if [ $osname = "darwin" ]; then
