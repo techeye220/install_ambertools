@@ -25,8 +25,8 @@ function message_source_amber(){
     echo "to your startup file (e.g., ~/.bashrc)"
     echo ""
     echo "If you use a C shell (e.g., csh, tcsh), source the"
-    echo "$ambhome/amber.csh file in your shell. Consider adding the line"
-    echo "  source $ambhome/amber.csh"
+    echo "$amberhome/amber.csh file in your shell. Consider adding the line"
+    echo "  source $amberhome/amber.csh"
     echo "to your startup file (e.g., ~/.cshrc)"
     echo ""
 }
