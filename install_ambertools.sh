@@ -50,7 +50,7 @@ fi
 echo "Install Miniconda and AmberTools to $prefix/$amberfolder"
 echo ""
 
-sh miniconda.sh -b -p $prefix/$amberfolder
+bash miniconda.sh -b -p $prefix/$amberfolder
 
 export PATH=$prefix/$amberfolder/bin:$PATH
 conda update --all -y
