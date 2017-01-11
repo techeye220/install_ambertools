@@ -21,8 +21,13 @@ function message_source_amber(){
     echo ""
     echo "If you use a Bourne shell (e.g., bash, sh, zsh, etc.), source the"
     echo "$amberhome/amber.sh file in your shell. Consider adding the line"
-    echo "source $amberhome/amber.sh"
+    echo "  source $amberhome/amber.sh"
     echo "to your startup file (e.g., ~/.bashrc)"
+    echo ""
+    echo "If you use a C shell (e.g., csh, tcsh), source the"
+    echo "$ambhome/amber.csh file in your shell. Consider adding the line"
+    echo "  source $ambhome/amber.csh"
+    echo "to your startup file (e.g., ~/.cshrc)"
     echo ""
 }
 
