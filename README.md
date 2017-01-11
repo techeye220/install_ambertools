@@ -18,4 +18,6 @@ sh install_ambertools.sh --prefix /opt/
 
 Note
 ----
-Subject to change
+- All instructions are subjected to change
+- If you already have `conda`, just `conda install ambertools -c hainm`
+    - `hainm` is temporary channel
