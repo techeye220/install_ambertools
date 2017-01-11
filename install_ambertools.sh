@@ -1,6 +1,8 @@
 #!/bin/sh
 
 version=16
+amberfolder='amber'$version
+set -e
 
 function print_help(){
     echo "bash install_ambertools.sh --prefix [your_desired_dir]"
@@ -29,22 +31,24 @@ else
     wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh;
 fi
 
-echo "Install Miniconda and AmberTools to $prefix"
+echo "Install Miniconda and AmberTools to $prefix/$amberfolder"
 echo ""
 
-bash miniconda.sh -b -p $prefix
+bash miniconda.sh -b -p $prefix/$amberfolder
 
-export PATH=$prefix/bin:$PATH
+export PATH=$prefix/$amberfolder/bin:$PATH
 conda update --all -y
-conda install --yes conda-build jinja2 pip cython numpy pytest
+conda install --yes conda-build jinja2 pip cython numpy nomkl pytest
 conda install --yes ipython notebook
-$prefix/bin/pip install matplotlib # avoid qt
+$prefix/$amberfolder/bin/pip install matplotlib # avoid qt
 conda install --yes ipywidgets -c conda-forge
 conda install --yes nglview -c bioconda
 
 # TODO: change to ambermd channel
 conda install --yes ambertools=$version -c hainm
+conda clean --all --yes
 
-echo "Make sure to add PATH"
 echo ""
-echo "export PATH=$prefix:\$PATH"
+echo "Make sure: "
+# absolute path
+echo "export PATH=$prefix/$amberfolder/bin:\$PATH"
