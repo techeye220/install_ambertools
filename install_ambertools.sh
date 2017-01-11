@@ -48,6 +48,7 @@ conda install --yes nglview -c bioconda
 conda install --yes ambertools=$version -c hainm
 conda clean --all --yes
 
-echo "Make sure to add PATH"
 echo ""
-echo "export PATH=$prefix/$amberfolder/bin:\$PATH"
+echo "Make sure: "
+# absolute path
+echo "export PATH=`pwd -P $prefix/$amberfolder/bin`:\$PATH"
