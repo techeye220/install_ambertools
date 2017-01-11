@@ -66,17 +66,24 @@ conda install --yes ambertools=$version -c $channel
 conda clean --all --yes
 
 # alias
-cd $prefix/$amberfolder
-ln -sf miniconda/bin/python amber.python || error "Linking Amber's Miniconda Python"
-ln -sf miniconda/bin/conda amber.conda || error "Linking Amber's Miniconda conda"
-ln -sf miniconda/bin/ipython amber.ipython || error "Linking Amber's Miniconda ipython"
-ln -sf miniconda/bin/jupyter amber.jupyter || error "Linking Amber's Miniconda jupyter"
-ln -sf miniconda/bin/pip amber.pip || error "Linking Amber's Miniconda pip"
+cwd=`pwd`
+cd $prefix/$amberfolder/bin
+ln -sf python amber.python || error "Linking Amber's Miniconda Python"
+ln -sf conda amber.conda || error "Linking Amber's Miniconda conda"
+ln -sf ipython amber.ipython || error "Linking Amber's Miniconda ipython"
+ln -sf jupyter amber.jupyter || error "Linking Amber's Miniconda jupyter"
+ln -sf pip amber.pip || error "Linking Amber's Miniconda pip"
+cd $cwd
 
 # Write resource files
 cat > $prefix/$amberfolder/amber.sh << EOF
 export AMBERHOME="$prefix/$amberfolder"
 export PATH="\${AMBERHOME}/bin:\${PATH}"
+EOF
+
+cat > $prefix/$amberfolder/amber.csh << EOF
+setenv AMBERHOME "$prefix/$amberfolder"
+setenv PATH "\${AMBERHOME}/bin:\${PATH}"
 EOF
 
 message_source_amber
