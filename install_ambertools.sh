@@ -1,6 +1,8 @@
 #!/bin/sh
 
-# TODO: specify version in command line
+# TODO: update to the latest version
+# TODO: specify python version (--py, -py?)
+# integrate with configure_python
 version=16
 amberfolder='amber'$version
 channel='hainm'
