@@ -87,13 +87,14 @@ ln -sf pip amber.pip || error "Linking Amber's Miniconda pip"
 cd $cwd
 
 # Write resource files
+amberhome=`$prefix/$amberfolder/bin/python -c "import sys; print(sys.prefix)"`
 cat > $prefix/$amberfolder/amber.sh << EOF
-export AMBERHOME="$prefix/$amberfolder"
+export AMBERHOME="$amberhome"
 export PATH="\${AMBERHOME}/bin:\${PATH}"
 EOF
 
 cat > $prefix/$amberfolder/amber.csh << EOF
-setenv AMBERHOME "$prefix/$amberfolder"
+setenv AMBERHOME "$amberhome"
 setenv PATH "\${AMBERHOME}/bin:\${PATH}"
 EOF
 
