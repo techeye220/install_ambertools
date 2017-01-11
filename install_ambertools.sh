@@ -51,4 +51,4 @@ conda clean --all --yes
 echo ""
 echo "Make sure: "
 # absolute path
-echo "export PATH=`pwd -P $prefix/$amberfolder/bin`:\$PATH"
+echo "export PATH=$prefix/$amberfolder/bin:\$PATH"
