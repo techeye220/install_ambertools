@@ -21,7 +21,7 @@ addons:
 matrix:
   include:
     - { os: linux }
-    - { os: osx }
+    # - { os: osx }
 
 sudo: true
 
@@ -45,6 +45,9 @@ script:
     - python -c "import sander; print(sander)"
     - python -c "import pytraj; print(pytraj)"
     - python -c "import nglview; print(nglview)"   
+
+after_success:
+    - echo "hello there"
 
 notifications:
   email: false
