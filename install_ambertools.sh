@@ -13,14 +13,15 @@ function print_help(){
 }
 
 function message_source_amber(){
-    echo "--------------------------------------------------------------------------------"
+    amberhome=`$prefix/$amberfolder/bin/python -c "import sys; print(sys.prefix)"`
+    echo ""
+    echo "----------------------------------------------------------------------"
     echo "Environment resource files are provided to set the proper environment"
-    echo "variables to use AMBER and AmberTools. This is required to run any Python"
-    echo "programs (like MMPBSA.py, ParmEd, MCPB.py, and pytraj)"
+    echo "variables to use AMBER and AmberTools."
     echo ""
     echo "If you use a Bourne shell (e.g., bash, sh, zsh, etc.), source the"
-    echo "$prefix/$amberfolder/amber.sh file in your shell. Consider adding the line"
-    echo "source $prefix/$amberfolder/amber.sh"
+    echo "$amberhome/amber.sh file in your shell. Consider adding the line"
+    echo "source $amberhome/amber.sh"
     echo "to your startup file (e.g., ~/.bashrc)"
     echo ""
 }
