@@ -46,5 +46,8 @@ script:
     - python -c "import pytraj; print(pytraj)"
     - python -c "import nglview; print(nglview)"   
 
+after_success:
+    - echo "hello there"
+
 notifications:
   email: false
