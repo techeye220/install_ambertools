@@ -38,7 +38,7 @@ bash miniconda.sh -b -p $prefix/$amberfolder
 
 export PATH=$prefix/$amberfolder/bin:$PATH
 conda update --all -y
-conda install --yes conda-build jinja2 pip cython numpy pytest
+conda install --yes conda-build jinja2 pip cython numpy nomkl pytest
 conda install --yes ipython notebook
 $prefix/$amberfolder/bin/pip install matplotlib # avoid qt
 conda install --yes ipywidgets -c conda-forge
