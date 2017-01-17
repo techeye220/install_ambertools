@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/Amber-MD/setup-scripts.svg?branch=master)](https://travis-ci.org/Amber-MD/setup-scripts)
 
+Users
+=====
 Install Python and AmberTools binary distributions
 --------------------------------------------------
 
@@ -22,11 +24,15 @@ Note
 - If you already have `conda`, just `conda install ambertools -c hainm`
     - `hainm` is temporary channel
 
+Developers
+==========
+
 Merge to amber repo
 -------------------
 ```bash
 cd $AMBERHOME
 git remote add setup-scripts-github https://github.com/amber-md/setup-scripts
 git fetch setup-scripts-github
-git pull -s recursive -X subtree=AmberTools/src/conda-recipe/setup-scripts/ -X theirs --squash setup-scripts-github master
+git pull -s recursive -X subtree=AmberTools/src/conda-recipe/setup-scripts/ 
+-X theirs --squash setup-scripts-github master
 ```
