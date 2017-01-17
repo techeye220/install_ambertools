@@ -21,3 +21,12 @@ Note
 - All instructions are subjected to change
 - If you already have `conda`, just `conda install ambertools -c hainm`
     - `hainm` is temporary channel
+
+Merge to amber repo
+-------------------
+```bash
+cd $AMBERHOME
+git remote add setup-scripts-github https://github.com/amber-md/setup-scripts
+git fetch setup-scripts-github
+git pull -s recursive -X subtree=AmberTools/src/conda-recipe/setup-scripts/ -X theirs --squash setup-scripts-github master
+```
