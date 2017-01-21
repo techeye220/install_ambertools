@@ -12,8 +12,8 @@ wget https://raw.githubusercontent.com/Amber-MD/setup-scripts/master/install_amb
 # The script will create /home/amber16 folder and install everything there
 sh install_ambertools.sh --prefix /home/
 
-# The script will create /opt/amber16 folder and install everything there
-sh install_ambertools.sh --prefix /opt/
+# You can certainly choose different prefix
+# e.g: sh install_ambertools.sh --prefix /opt/
 ```
 
 # adjust the script for your need
