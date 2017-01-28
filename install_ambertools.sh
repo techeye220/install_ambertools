@@ -5,7 +5,7 @@
 # integrate with configure_python
 version=16
 amberfolder='amber'$version
-channel='hainm'
+channel='ambermd'
 
 set -e
 
