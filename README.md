@@ -19,6 +19,7 @@ sh install_ambertools.sh --prefix $HOME
 # You can certainly choose different prefix
 # e.g: sh install_ambertools.sh --prefix /opt/
 
+# activate
 source $HOME/amber17/amber.sh
 # That's it.
 ```
