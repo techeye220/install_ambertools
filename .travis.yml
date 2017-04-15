@@ -21,11 +21,12 @@ addons:
 matrix:
   include:
     - { os: linux }
-    # - { os: osx }
+    - { os: osx }
 
 sudo: true
 
 before_install:
+  - source scripts/dummy.sh
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       brew tap homebrew/science;
       brew update;

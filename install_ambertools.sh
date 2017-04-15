@@ -7,6 +7,8 @@ version=17
 bugfix=0
 amberfolder='amber'$version
 channel='http://ambermd.org/downloads/ambertools-rc/conda/'
+pyver=2
+MINICONDA_VERSION=4.3.11
 
 set -e
 
@@ -56,9 +58,9 @@ fi
 # should work for both osx and linux
 osname=`python -c 'import sys; print(sys.platform)'`
 if [ $osname = "darwin" ]; then
-    wget https://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -O miniconda.sh;
+    wget https://repo.continuum.io/miniconda/Miniconda${pyver}-${MINICONDA_VERSION}-MacOSX-x86_64.sh -O miniconda.sh;
 else
-    wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh;
+    wget https://repo.continuum.io/miniconda/Miniconda${pyver}-${MINICONDA_VERSION}-Linux-x86_64.sh -O miniconda.sh;
 fi
 
 echo "Install Miniconda and AmberTools to $prefix/$amberfolder"
