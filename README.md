@@ -20,14 +20,6 @@ sh install_ambertools.sh --prefix $HOME
 # e.g: sh install_ambertools.sh --prefix /opt/
 ```
 
-# adjust the script for your need
-
-Note
-----
-- All instructions are subjected to change
-- If you already have `conda`, just `conda install ambertools -c hainm`
-    - `hainm` is temporary channel
-
 Developers
 ==========
 
