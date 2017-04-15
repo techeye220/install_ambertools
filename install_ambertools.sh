@@ -3,9 +3,10 @@
 # TODO: update to the latest version
 # TODO: specify python version (--py, -py?)
 # integrate with configure_python
-version=16
+version=17
+bugfix=0
 amberfolder='amber'$version
-channel='ambermd'
+channel='http://ambermd.org/downloads/ambertools-rc/conda/'
 
 set -e
 
@@ -76,7 +77,7 @@ conda install --yes ipywidgets -c conda-forge
 conda install --yes nglview -c bioconda
 
 # TODO: change to ambermd channel
-conda install --yes ambertools=$version -c $channel
+conda install --yes ambertools=$version.$bugfix -c $channel
 conda clean --all --yes
 
 # alias
