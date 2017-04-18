@@ -6,7 +6,7 @@
 version=17
 bugfix=0
 amberfolder='amber'$version
-channel='http://ambermd.org/downloads/ambertools-rc/conda/'
+channel='http://ambermd.org/downloads/ambertools/conda/'
 pyver=2
 MINICONDA_VERSION=4.3.11
 
