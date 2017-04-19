@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Amber-MD/setup-scripts.svg?branch=master)](https://travis-ci.org/Amber-MD/setup-scripts)
+[![Build Status](https://travis-ci.org/Amber-MD/install_ambertools.svg?branch=master)](https://travis-ci.org/Amber-MD/install_ambertools)
 
 Users
 =====
