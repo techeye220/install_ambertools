@@ -75,7 +75,7 @@ conda install --yes scipy
 conda install --yes ipython notebook
 $prefix/$amberfolder/bin/pip install pip --upgrade
 $prefix/$amberfolder/bin/pip install matplotlib # avoid qt
-conda install --yes ipywidgets -c conda-forge
+conda install --yes ipywidgets
 conda install --yes nglview -c bioconda
 
 # TODO: change to ambermd channel
