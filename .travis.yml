@@ -20,8 +20,10 @@ addons:
 
 matrix:
   include:
-    - { os: linux }
-    - { os: osx }
+    - { os: linux, env: PYVER=2 }
+    - { os: linux, env: PYVER=3 }
+    - { os: osx, env: PYVER=2 }
+    - { os: osx, env: PYVER=3 }
 
 sudo: true
 
@@ -34,8 +36,8 @@ before_install:
     fi
 
 install:
-    - cp scripts/.amberrc $HOME/
-    - source install_ambertools.sh --prefix $HOME/
+    - bash install_ambertools.sh --prefix $HOME/ -v $PYVER
+    - source $HOME/amber17/amber.sh
 
 script:
     - tleap -h

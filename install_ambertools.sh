@@ -1,20 +1,26 @@
 #!/bin/sh
 
-# TODO: update to the latest version
-# TODO: specify python version (--py, -py?)
-# integrate with configure_python
-version=17
-bugfix=0
-amberfolder='amber'$version
+at_version=17
+amberfolder='amber'$at_version
 channel='http://ambermd.org/downloads/ambertools/conda/'
 pyver=2
 MINICONDA_VERSION=4.3.11
 
 set -e
 
-function print_help(){
-    echo "bash install_ambertools.sh --prefix [your_desired_dir]"
-    exit
+
+print_help() {
+    echo "`basename $0` [options]"
+    echo ""
+    echo "Options"
+    echo "-------"
+    echo "    -h, --help    Print this message and exit"
+    echo "    -v VERSION, --version VERSION"
+    echo "                  What version of Python do you want installed? Input"
+    echo "                  can be either 2 (default) or 3. Note, Phenix support"
+    echo "                  requires Python 2"
+    echo "    -p PREFIX, --prefix PREFIX"
+    exit 1
 }
 
 function message_source_amber(){
@@ -36,19 +42,34 @@ function message_source_amber(){
     echo ""
 }
 
-while [ $# != 2 ]; do
-    print_help
-done
 
-case "$1" in
-    -p|--prefix)
-        prefix=$2
-        ;;
-    *)
-        echo "Unsupported argument: $1"
-        print_help
-        ;;
-esac
+# Process command-line
+while [ $# -ge 1 ]; do
+    case "$1" in
+        -h|--help)
+            print_help
+            ;;
+        -v|--version)
+            shift;
+            if [ $# -lt 1 ]; then
+                print_help
+            fi
+            pyver=$1
+            ;;
+        -p|--prefix)
+            shift;
+            if [ $# -lt 1 ]; then
+                print_help
+            fi
+            prefix=$1
+            ;;
+        *)
+            echo "Unsupported argument: $1"
+            print_help
+            ;;
+    esac
+    shift
+done
 
 if [ -d $prefix/$amberfolder ]; then
     echo "ERROR: $prefix/$amberfolder already exists. Please change your prefix."
@@ -76,10 +97,16 @@ conda install --yes ipython notebook
 $prefix/$amberfolder/bin/pip install pip --upgrade
 $prefix/$amberfolder/bin/pip install matplotlib # avoid qt
 conda install --yes ipywidgets
-conda install --yes nglview -c bioconda
+
+if [ $pyver = 2 ]; then
+    conda install --yes nglview -c bioconda
+else
+    # no (conda) nglview for python 3.6 yet
+    pip install nglview
+fi
 
 # TODO: change to ambermd channel
-conda install --yes ambertools=$version.$bugfix -c $channel
+conda install --yes ambertools=$at_version -c $channel
 conda clean --all --yes
 
 # alias
