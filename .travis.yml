@@ -20,23 +20,33 @@ addons:
 
 matrix:
   include:
-    - { os: linux, env: PYVER=2 }
-    - { os: linux, env: PYVER=3 }
-    - { os: osx, env: PYVER=2 }
-    - { os: osx, env: PYVER=3 }
+    - { os: linux, env: PYVER=2 NOCONDA=""}
+    - { os: linux, env: PYVER=3 NOCONDA=""}
+    - { os: osx, env: PYVER=2 NOCONDA=""}
+    - { os: osx, env: PYVER=3 NOCONDA=""}
+    - { os: linux, env: PYVER=2 NOCONDA="--non-conda"}
+    - { os: linux, env: PYVER=3 NOCONDA="--non-conda"}
+    - { os: osx, env: PYVER=2 NOCONDA="--non-conda"}
+    - { os: osx, env: PYVER=3 NOCONDA="--non-conda"}
 
 sudo: true
 
 before_install:
   - source scripts/dummy.sh
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+  - if [[ "$TRAVIS_OS_NAME" = "osx" ]]; then
       brew tap homebrew/science;
       brew update;
       sudo bash scripts/install_gfortran.sh;
     fi
+  - if [[ "$NOCONDA" = "--non-conda" ]]; then
+      pip install numpy --user;
+      pip install nglview --user;
+      pip install ipython==5.3.0;
+      pip install ipywidgets --user;
+    fi
 
 install:
-    - bash install_ambertools.sh --prefix $HOME/ -v $PYVER
+    - bash install_ambertools.sh --prefix $HOME/ -v $PYVER $NOCONDA
     - source $HOME/amber17/amber.sh
 
 script:
