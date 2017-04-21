@@ -10,8 +10,11 @@ Install Python and AmberTools binary distributions
 wget https://raw.githubusercontent.com/Amber-MD/install_ambertools/master/install_ambertools.sh
 # or: curl https://raw.githubusercontent.com/Amber-MD/install_ambertools/master/install_ambertools.sh -o install_ambertools.sh
 
-# The script will create $HOME/amber17 folder and install everything there
+# The script will create $HOME/amber17 folder and install everything there (AmberTools and compatible Python packages)
 sh install_ambertools.sh --prefix $HOME
+
+# Use user's preinstalled Python
+sh install_ambertools --prefix $HOME --non-conda
 
 # if "sh" does not work, try "bash"
 # bash install_ambertools.sh --prefix $HOME
