@@ -32,7 +32,6 @@ matrix:
 sudo: true
 
 before_install:
-  - source scripts/dummy.sh
   - if [[ "$TRAVIS_OS_NAME" = "osx" ]]; then
       brew tap homebrew/science;
       brew update;
@@ -61,6 +60,7 @@ script:
 
 after_success:
     - echo "hello there"
+    - source scripts/dummy.sh
 
 notifications:
   email: false
