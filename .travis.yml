@@ -56,11 +56,10 @@ script:
     - python -c "import parmed; print(parmed)"
     - python -c "import sander; print(sander)"
     - python -c "import pytraj; print(pytraj)"
-    - python -c "import nglview; print(nglview)"   
+    - source scripts/dummy.sh
 
 after_success:
     - echo "hello there"
-    - source scripts/dummy.sh
-
+    
 notifications:
   email: false
