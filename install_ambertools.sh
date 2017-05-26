@@ -173,20 +173,16 @@ EOF
 
 install_amber_non_conda(){
     echo "Install AmberTools with user's Python"
-    amber_url='http://ambermd.org/downloads/ambertools/non-conda/'
-    at_name="ambertools-17.0-0.13Apr17.tar.bz2.niceday"
+    amber_url="http://ambermd.org/cgi-bin/AmberTools${at_version}-binary-get.pl?Name=bot&Institution=NA&City=NA&State=NA&Country=NA&OS="
     check_existing_amber
     cd $prefix
     if [ $osname = "darwin" ]; then
-        curl -O $amber_url/osx-64.$at_name
-        mv osx-64.$at_name $ambertools_fn
+        curl ${amber_url}osx-64 --output $ambertools_fn
     else
-        wget $amber_url/linux-64.$at_name
-        mv linux-64.$at_name $ambertools_fn
+        wget ${amber_url}linux-64 -O $ambertools_fn
     fi
     tar -xf $ambertools_fn
 }
-
 
 summarize
 if [ "$install_python" = "True" ]; then
