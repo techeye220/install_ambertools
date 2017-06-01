@@ -53,6 +53,9 @@ script:
     - sqm -h
     # - sander -h # sander -h exit 1, ack
     - cpptraj -h
+    - sqm -h
+    - antechamber -h
+    - tleap -h
     - python -c "import parmed; print(parmed)"
     - python -c "import sander; print(sander)"
     - python -c "import pytraj; print(pytraj)"
