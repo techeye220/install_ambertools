@@ -35,7 +35,6 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" = "osx" ]]; then
       brew tap homebrew/science;
       brew update;
-      # sudo bash scripts/install_gfortran.sh; # users don't need to install libgfortran
     fi
   - if [[ "$NOCONDA" = "--non-conda" ]]; then
       pip install numpy --user;
