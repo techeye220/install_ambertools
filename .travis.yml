@@ -49,6 +49,7 @@ install:
 
 script:
     - curl https://raw.githubusercontent.com/Amber-MD/ambertools-binary-build/master/conda-recipe/run_test.sh --output run_test.sh
+    - cat run_test.sh | sed "s/python/amber.python/g" > tmp && mv tmp run_test.sh
     - bash run_test.sh || exit 1
     - source scripts/dummy.sh # make travis osx happy
 

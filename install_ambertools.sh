@@ -182,6 +182,14 @@ install_amber_non_conda(){
         wget ${amber_url}linux-64 -O $ambertools_fn
     fi
     tar -xf $ambertools_fn
+    cat >>amber${at_version}/amber.sh <<EOF
+
+if [ -L \$AMBERHOME/bin/amber.python ]; then
+    rm \$AMBERHOME/bin/amber.python
+fi
+ln -s \`which python\` \$AMBERHOME/bin/amber.python
+# chmod +x \$AMBERHOME/bin/amber.python
+EOF
 }
 
 summarize
