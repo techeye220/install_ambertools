@@ -2,8 +2,8 @@
 
 Users
 =====
-Install Python and AmberTools binary distributions
---------------------------------------------------
+
+- Non-conda user
 
 ```bash
 # download install_ambertools.sh
@@ -27,15 +27,7 @@ source $HOME/amber17/amber.sh
 # That's it.
 ```
 
-Developers
-==========
-
-Merge to amber repo
--------------------
-```bash
-cd $AMBERHOME
-git remote add setup-scripts-github https://github.com/amber-md/setup-scripts
-git fetch setup-scripts-github
-git pull -s recursive -X subtree=AmberTools/src/conda-recipe/setup-scripts/ 
--X theirs --squash setup-scripts-github master
+- conda user
+```
+conda install ambertools=17 -c http://ambermd.org/downloads/ambertools/conda/
 ```
