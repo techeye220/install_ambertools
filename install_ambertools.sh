@@ -33,6 +33,8 @@ print_help() {
     echo "    -p PREFIX, --prefix PREFIX"
     echo "                  Install everything to <PREFIX>/$amberfolder"
     echo "               --non-conda"
+    echo "                  DEPRECATED. Please use --non-miniconda option" 
+    echo "               --non-miniconda"
     echo "                  If given, only download and unpack AmberTools"
     echo "                  Else, install compatible Python from Miniconda distribution "
     echo "                  and install all Python requirements (numpy, scipy, matplotlib, nglview ...)"
@@ -90,6 +92,10 @@ while [ $# -ge 1 ]; do
             prefix=$1
             ;;
         --non-conda)
+            echo "--non-conda is deprecated. Please use --non-miniconda option"
+            exit 1
+            ;;
+        --non-miniconda)
             install_python=False
             ;;
         *)

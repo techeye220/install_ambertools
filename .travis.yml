@@ -24,10 +24,10 @@ matrix:
     - { os: linux, env: PYVER=3 NOCONDA=""}
     - { os: osx, env: PYVER=2 NOCONDA=""}
     - { os: osx, env: PYVER=3 NOCONDA=""}
-    - { os: linux, env: PYVER=2 NOCONDA="--non-conda"}
-    - { os: linux, env: PYVER=3 NOCONDA="--non-conda"}
-    - { os: osx, env: PYVER=2 NOCONDA="--non-conda"}
-    - { os: osx, env: PYVER=3 NOCONDA="--non-conda"}
+    - { os: linux, env: PYVER=2 NOCONDA="--non-miniconda"}
+    - { os: linux, env: PYVER=3 NOCONDA="--non-miniconda"}
+    - { os: osx, env: PYVER=2 NOCONDA="--non-miniconda"}
+    - { os: osx, env: PYVER=3 NOCONDA="--non-miniconda"}
 
 sudo: true
 
